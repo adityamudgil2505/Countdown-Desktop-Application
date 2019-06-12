@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/interval';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/takeWhile';
-import 'rxjs/add/operator/do';
+import { Observable } from 'rxjs';
+import {  } from 'rxjs';
 
 
 @Component({
@@ -17,10 +14,11 @@ export class AppComponent {
   max=1;
   curr=0;
   start(){
-    const interval = Observable.interval(100);
-    interval.takeWhile( _ => this.isFinished)
-            .do( i => this.curr +=0.1 )
-            .subscribe();
+    Rx.Observable
+      .interval(200)
+      .takeWhile( _ => !this.isFinished )
+      .do(_ => this.curr += 0.1)
+      .subscribe();      
   }
   finish(){
     this.curr=this.max;
