@@ -3,9 +3,10 @@ let win;
 
 function createWindow(){
   win = new BrowserWindow({
-    width: 500,
-    height: 500,
-    backgroundColor: '#ffffff'
+    width: 600, 
+    height: 600,
+    backgroundColor: '#111111',
+    icon: `file://${__dirname}/dist/assets/logo/logo.png`
   });
   // win.loadURL('http://github.com');
   win.loadURL(`file://${__dirname}/dist/index.html`)

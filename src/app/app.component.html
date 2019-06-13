@@ -1,30 +1,38 @@
 <main class="content">
-   <h1>Electron Countdown Application</h1>
-   <div class="progress-wrapper" *ngIf="maxVal">
-     <div class="text" *ngIf="!isFinished">
-      {{ maxVal - currVal | number:'1.1-1'}}
-     </div>
-     <div class="text" *ngIf="!isFinished">
-      ding
-      <audio src="assets/bell.mp3" autoplay></audio>
-     </div>
-     <round-progress
-      [current]="currVal"
-      [max]="maxVal"
-      [radius]="100"
-      [stroke]="20"
-     ></round-progress>
-   </div>
+        
+  <h1>Countdown Timer</h1>
 
-   <!-- Input from user -->
-   <div class="controls-wrapper">
-     <div *ngIf="isFinished">
-       <label>Seconds</label>
-       <input type="text"
-              [(ngModel)]="max"
-              (keydown)="reset()">
-     </div>
-     <button *ngIf="currVal <= 0" (click)="start()"></button>
-     <button *ngIf="!isFinished"  (click)="finsh()"></button>
-   </div>
+  <div class="progress-wrapper" *ngIf="maxVal">
+
+      <div class="text" *ngIf="!isFinished">
+        {{ max - current | number: '1.1-1' }}
+      </div>
+      
+      <div class="text" *ngIf="isFinished">
+          ding!
+          <audio src="assets/Bell.mp3" autoplay></audio>
+      </div>
+      
+      <round-progress
+              [max]="maxVal"
+              [current]="currentVal"
+              [radius]="100"
+              [stroke]="25">
+      </round-progress>
+      
+  </div>
+
+  <div class="controls-wrapper">
+          <div>
+            <label>Seconds</label>
+            <input class="input" placeholder="number of seconds" type="text" 
+            [(ngModel)]="max"
+            (keydown)="reset()">
+          </div>
+          
+      <button class="button is-info" *ngIf="currentVal <= 0" (click)="start()">Start</button>
+      <button class="button is-danger" *ngIf="!isFinished" (click)="finish()">Finish</button>
+  </div>
+
+
 </main>
