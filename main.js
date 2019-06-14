@@ -5,10 +5,11 @@ function createWindow(){
   win = new BrowserWindow({
     width: 500, 
     height: 550,
-    icon: `file://${__dirname}/dist/assets/logo/logo.png`
+    show: false
   });
   // win.loadURL('http://github.com');
   win.loadURL(`file://${__dirname}/dist/index.html`)
+  win.once('ready-to-show', win.show);
   win.on('closed', ()=> win=null);  
 }
 
