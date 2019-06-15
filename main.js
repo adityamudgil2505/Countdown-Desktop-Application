@@ -8,7 +8,7 @@ function createWindow(){
     show: false
   });
   // win.loadURL('http://github.com');
-  win.loadURL(`file://${__dirname}/dist/index.html`)
+  win.loadURL(`file://${__dirname}/dist-web/index.html`)
   win.once('ready-to-show', win.show);
   win.on('closed', ()=> win=null);  
 }
