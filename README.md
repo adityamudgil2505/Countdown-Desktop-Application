@@ -1,5 +1,5 @@
 # Countdown Desktop Application
-This is a simple application that allow user to start a timer for a particular intereval and after time over it will indicate user through bell sound.
+This is a simple application that allow user to start a timer for a particular interval and after time over it will indicate user through bell sound.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.1.
 Other features are
 - You can run this on Mac, Windows, Linux
